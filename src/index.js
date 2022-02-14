@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Firebase, {FirebaseContext} from './server';
+
+
+//const FirebaseContext = React.createContext();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </FirebaseContext.Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
